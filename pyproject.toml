@@ -20,8 +20,10 @@ packages = [
 ]
 
 
+
 [tool.poetry.dependencies]
 python = ">=3.8,<4"
+
 
 [tool.poetry.dev-dependencies]
 # Testing
@@ -56,8 +58,10 @@ pyyaml = "*"
 # Doc
 restructuredtext_lint = "*"
 
+
 [tool.isort]
 profile = "black"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
