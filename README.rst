@@ -21,11 +21,11 @@ Features
 Credits
 -------
 
-This project is inspired by the Django-Tailwind_ project.
+This project is inspired by the `Django-Tailwind`_ project.
 
-This package was created with Cookiecutter_, using the abilian/cookiecutter-abilian-python_
+This package was created with `Cookiecutter`_, using the `abilian/cookiecutter-abilian-python`_
 project template.
 
-.. _Django-Tailwind: https://github.com/timonweb/django-tailwind
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`Django-Tailwind`: https://github.com/timonweb/django-tailwind
+.. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
 .. _`abilian/cookiecutter-abilian-python`: https://github.com/abilian/cookiecutter-abilian-python

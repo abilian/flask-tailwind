@@ -1,7 +1,7 @@
 import subprocess
-
 from textwrap import dedent
 
+# Assume npm is in the path for now.
 NPM_BIN_PATH = "npm"
 
 
@@ -21,14 +21,9 @@ class NPM:
         try:
             subprocess.run([self.npm_bin_path] + list(args), cwd=self.cwd)
         except OSError:
-            raise NPMException(dedent(
-                """
-                It looks like node.js and/or npm is not installed or cannot be found.
-                Visit https://nodejs.org to download and install node.js for your system.
-                If you have npm installed and still getting this error message,
-                set NPM_BIN_PATH variable in settings.py to match path of NPM executable in your system.
-                
-                Example:
-                NPM_BIN_PATH = "/usr/local/bin/npm"
-                """
-            ))
+            msg = """
+            It looks like node.js and/or npm is not installed or cannot be found.
+            Visit https://nodejs.org to download and install node.js for your system.
+            """
+
+            raise NPMException(dedent(msg))

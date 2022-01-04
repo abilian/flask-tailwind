@@ -9,13 +9,19 @@ from .tags import make_tailwind_css_tag
 
 
 class Tailwind(object):
-    def __init__(self, app: Flask=None):
+    def __init__(self, app: Flask = None):
         self.app = app
 
         if app is not None:
             self.init_app(app)
 
     def init_app(self, app: Flask):
+        if "tailwind" in app.extensions:
+            raise RuntimeError(
+                "This extension is already registered on this Flask app."
+            )
+        app.extensions["tailwind"] = self
+
         app.after_request(self.after_request)
         app.route("/_tailwind/<path:filename>")(self.tailwind_static)
 

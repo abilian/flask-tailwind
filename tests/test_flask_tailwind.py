@@ -11,6 +11,8 @@ from flask_tailwind import Tailwind, cli
 def test_extension():
     app = Flask(__name__)
     tailwind = Tailwind(app)
+    assert "tailwind" in app.extensions
+    assert app.extensions["tailwind"] == tailwind
 
 
 def test_cli():

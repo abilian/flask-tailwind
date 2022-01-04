@@ -4,15 +4,21 @@ from flask import current_app
 
 
 def make_tailwind_css_tag():
-    tag = dedent("""
+    tag = dedent(
+        """
         <link rel="stylesheet" href="/_tailwind/styles.css">
-    """)
+    """
+    )
     if current_app.debug:
-        tag += dedent("""
+        url = "//HOST:8383/browser-sync/browser-sync-client.js"
+        tag += dedent(
+            f"""
             <script id="__bs_script__">
                 document.write(
-                    "<script async src='//HOST:8383/browser-sync/browser-sync-client.js'><\/script>"
-                    .replace("HOST", location.hostname));
+                    "<script async src='{url}'><\\/script>"
+                    .replace("HOST", location.hostname)
+                );
             </script>
-        """)
+            """
+        )
     return tag
