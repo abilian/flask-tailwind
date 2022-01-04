@@ -15,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/sfermigier/flask_tailwind/issues.
+Report bugs at https://github.com/abilian/flask-tailwind/issues.
 
 If you are reporting a bug, please include:
 

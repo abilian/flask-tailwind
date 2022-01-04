@@ -1,6 +1,6 @@
 {
-  "name": "{{ cookiecutter.app_name }}",
-  "version": "3.0.0",
+  "name": "APPNAME-tailwind",
+  "version": "0.0.1",
   "description": "",
   "scripts": {
     "start": "npm run dev",
