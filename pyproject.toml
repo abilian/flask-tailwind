@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "flask-tailwind"
-version = "0.1.0"
+version = "0.1.1"
 homepage = "https://github.com/abilian/flask-tailwind"
 description = "Flask+Tailwind integration."
 authors = ["Abilian SAS <contact@abilian.com>"]
