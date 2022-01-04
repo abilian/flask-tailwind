@@ -2,7 +2,7 @@
 name = "flask-tailwind"
 version = "0.1.0"
 homepage = "https://github.com/abilian/flask-tailwind"
-description = "Top-level package for Flask-Tailwind."
+description = "Flask+Tailwind integration."
 authors = ["Abilian SAS <contact@abilian.com>"]
 readme = "README.rst"
 classifiers=[
