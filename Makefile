@@ -46,10 +46,10 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint/flake8: ## check style with flake8
-	flake8 flask_tailwind tests
+	flake8 src tests
 
 lint/black: ## check style with black
-	black --check flask_tailwind tests
+	black --check src tests
 
 lint: lint/flake8 lint/black ## check style
 
@@ -59,7 +59,7 @@ test: ## run tests quickly with the default Python
 
 test-with-coverage:
 	@echo "--> Running Python tests"
-	py.test --cov $(PKG)
+	pytest --cov $(PKG)
 	@echo ""
 
 test-with-typeguard:

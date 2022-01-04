@@ -2,35 +2,25 @@
 
 """Tests for `flask_tailwind` package."""
 
-import pytest
 from click.testing import CliRunner
+from flask import Flask
 
-from flask_tailwind import cli
-
-
-@pytest.fixture
-def response():
-    """Sample pytest fixture.
-
-    See more at: http://doc.pytest.org/en/latest/fixture.html
-    """
-    # import requests
-    # return requests.get('https://github.com/audreyr/cookiecutter-pypackage')
+from flask_tailwind import Tailwind, cli
 
 
-def test_content(response):
-    """Sample pytest test function with the pytest fixture as an argument."""
-    # from bs4 import BeautifulSoup
-    # assert 'GitHub' in BeautifulSoup(response.content).title.string
+def test_extension():
+    app = Flask(__name__)
+    tailwind = Tailwind(app)
 
 
-def test_command_line_interface():
-    """Test the CLI."""
+def test_cli():
     runner = CliRunner()
-    result = runner.invoke(cli.main)
-    assert result.exit_code == 0
-    assert 'flask_tailwind.cli.main' in result.output
 
-    help_result = runner.invoke(cli.main, ['--help'])
+    result = runner.invoke(cli.tailwind)
+    assert result.exit_code == 0
+    assert "Perform Tailwind operations" in result.output
+
+    help_result = runner.invoke(cli.tailwind, ["--help"])
     assert help_result.exit_code == 0
-    assert '--help  Show this message and exit.' in help_result.output
+    assert "--help  Show this message and exit." in help_result.output
+    assert "init" in help_result.output

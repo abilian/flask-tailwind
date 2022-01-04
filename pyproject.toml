@@ -1,13 +1,12 @@
-[tool]
 [tool.poetry]
 name = "flask-tailwind"
 version = "0.1.0"
 homepage = "https://github.com/abilian/flask-tailwind"
 description = "Top-level package for Flask-Tailwind."
-authors = ["Abilian SAS <sf@abilian.com>"]
+authors = ["Abilian SAS <contact@abilian.com>"]
 readme = "README.rst"
 classifiers=[
-    'Development Status :: 2 - Pre-Alpha',
+    'Development Status :: 3 - Alpha',
     'Intended Audience :: Developers',
     'Natural Language :: English',
     'Programming Language :: Python :: 3',
@@ -20,12 +19,20 @@ packages = [
 ]
 
 
+[tool.poetry.plugins."flask.commands"]
+tailwind = "flask_tailwind.cli:tailwind"
+
 
 [tool.poetry.dependencies]
 python = ">=3.8,<4"
 
+Flask = "^2"
+
 
 [tool.poetry.dev-dependencies]
+# Debug
+devtools = "^0.8.0"
+
 # Testing
 pytest = "*"
 pytest-cov = "*"

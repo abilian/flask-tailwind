@@ -1,6 +1,6 @@
 repos:
 -   repo: git://github.com/pre-commit/pre-commit-hooks
-    rev: v3.3.0
+    rev: v4.1.0
     hooks:
       - id: check-added-large-files
       - id: check-ast
@@ -29,13 +29,13 @@ repos:
 
 
 -   repo: https://github.com/pre-commit/mirrors-isort
-    rev: v5.6.4
+    rev: v5.10.1
     hooks:
     -   id: isort
 
 
 -   repo: https://gitlab.com/pycqa/flake8
-    rev: 3.8.4
+    rev: 3.9.2
     hooks:
     -   id: flake8
 
