@@ -12,7 +12,7 @@
  |
  */
 
-const tailwindConfig = require('./tailwind.config.js');
+const tailwindConfig = require("./tailwind.config.js");
 
 module.exports = {
     port: 8383,
@@ -20,8 +20,5 @@ module.exports = {
     logSnippet: false,
     open: false,
     reloadOnRestart: true,
-    files: [
-        './dist/styles.css',
-        ...tailwindConfig.content
-    ]
+    files: ["./dist/styles.css", ...tailwindConfig.content],
 };

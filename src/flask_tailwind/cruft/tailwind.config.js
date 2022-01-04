@@ -10,8 +10,8 @@ module.exports = {
         /**
          * HTML. Paths to Flask template files that may contain Tailwind CSS classes.
          */
-        '../src/**/templates/**/*.html',
-        '../src/**/templates/**/*.j2',
+        "../src/**/templates/**/*.html",
+        "../src/**/templates/**/*.j2",
 
         /**
          * JS: If you use Tailwind CSS in JavaScript, uncomment the following lines and make sure
@@ -26,7 +26,7 @@ module.exports = {
          * Python: If you use Tailwind CSS classes in Python, uncomment the following line
          * and make sure the pattern below matches your project structure.
          */
-        '../src/**/*.py',
+        "../src/**/*.py",
     ],
     theme: {
         extend: {},
@@ -37,9 +37,9 @@ module.exports = {
          * for forms. If you don't like it or have own styling for forms,
          * comment the line below to disable '@tailwindcss/forms'.
          */
-        require('@tailwindcss/forms'),
-        require('@tailwindcss/typography'),
-        require('@tailwindcss/line-clamp'),
-        require('@tailwindcss/aspect-ratio'),
+        require("@tailwindcss/forms"),
+        require("@tailwindcss/typography"),
+        require("@tailwindcss/line-clamp"),
+        require("@tailwindcss/aspect-ratio"),
     ],
-}
+};
