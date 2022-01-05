@@ -18,6 +18,7 @@ def tailwind():
 @tailwind.command()
 @with_appcontext
 def init():
+    """Init the tailwind/ directory (if it doesn't exist)"""
     source_dir = Path(__file__).parent / "cruft"
     dest_dir = Path("tailwind")
     if dest_dir.exists():
@@ -31,19 +32,21 @@ def init():
 @tailwind.command()
 @with_appcontext
 def install():
+    """Install the dependencies using npm."""
     npm_run("install")
 
 
 @tailwind.command()
 @with_appcontext
 def build():
+    """Build the CSS assets."""
     npm_run("run", "build")
 
 
 @tailwind.command()
 @with_appcontext
 def start():
-    """Start watching css changes for dev."""
+    """Start watching CSS changes for dev."""
     npm_run("run", "start")
 
 
@@ -61,11 +64,11 @@ def update():
     npm_run("update")
 
 
-@tailwind.command()
-@with_appcontext
-def npm(*args):
-    """Call directly npm with given args."""
-    npm_run(*args)
+# @tailwind.command()
+# @with_appcontext
+# def npm(*args):
+#     """Call directly npm with given args."""
+#     npm_run(*args)
 
 
 def npm_run(*args):
