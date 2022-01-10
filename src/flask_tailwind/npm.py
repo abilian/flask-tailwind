@@ -10,10 +10,10 @@ class NPMException(Exception):
 
 
 class NPM:
-    cwd: str = None
-    npm_bin_path: str = None
+    cwd: str
+    npm_bin_path: str
 
-    def __init__(self, cwd=None, npm_bin_path=None):
+    def __init__(self, cwd="", npm_bin_path=None):
         self.npm_bin_path = npm_bin_path if npm_bin_path else NPM_BIN_PATH
         self.cwd = cwd
 

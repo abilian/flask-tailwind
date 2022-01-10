@@ -64,6 +64,7 @@ pyyaml = "*"
 
 # Doc
 restructuredtext_lint = "*"
+pyanalyze = "^0.5.0"
 
 
 [tool.isort]

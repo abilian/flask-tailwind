@@ -2,6 +2,7 @@
 
 import os
 from pathlib import Path
+from typing import Union
 
 from flask import Flask, Response, send_from_directory
 
@@ -9,7 +10,7 @@ from .tags import make_tailwind_css_tag
 
 
 class Tailwind(object):
-    def __init__(self, app: Flask = None):
+    def __init__(self, app: Union[Flask, None] = None):
         self.app = app
 
         if app is not None:
@@ -42,5 +43,5 @@ class Tailwind(object):
         return response
 
     def tailwind_static(self, filename):
-        dist = Path(os.getcwd()) / "tailwind" / "dist"
+        dist = str(Path(os.getcwd()) / "tailwind" / "dist")
         return send_from_directory(dist, filename)
