@@ -7,7 +7,7 @@ def make_tailwind_css_tag():
     tag = dedent(
         """
         <link rel="stylesheet" href="/_tailwind/styles.css">
-    """
+        """
     )
     if current_app.debug:
         url = "//HOST:8383/browser-sync/browser-sync-client.js"

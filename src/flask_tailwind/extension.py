@@ -25,6 +25,7 @@ class Tailwind(object):
 
         app.after_request(self.after_request)
         app.route("/_tailwind/<path:filename>")(self.tailwind_static)
+        app.template_global("tailwind_css")(make_tailwind_css_tag)
 
     def after_request(self, response: Response):
         if not response.mimetype.startswith("text/html"):
@@ -37,9 +38,11 @@ class Tailwind(object):
             return response
 
         body = b"".join(response.response).decode()
+        # debug(body)
         tag = make_tailwind_css_tag()
         body = body.replace("</head>", f"{tag}\n</head>")
         response.response = [body.encode("utf8")]
+        response.content_length = len(response.response[0])
         return response
 
     def tailwind_static(self, filename):
