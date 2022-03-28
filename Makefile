@@ -31,7 +31,7 @@ configure-git:
 #
 test-all: test test-readme
 
-test:
+test: ## run tests quickly with the default Python
 	@echo "--> Running Python tests"
 	pytest --ff -x -p no:randomly
 	@echo ""
@@ -52,10 +52,6 @@ lint/black: ## check style with black
 	black --check src tests
 
 lint: lint/flake8 lint/black ## check style
-
-test: ## run tests quickly with the default Python
-	pytest
-	@echo ""
 
 test-with-coverage:
 	@echo "--> Running Python tests"
