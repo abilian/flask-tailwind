@@ -19,14 +19,14 @@ def tailwind():
 @with_appcontext
 def init():
     """Init the tailwind/ directory (if it doesn't exist)"""
-    source_dir = Path(__file__).parent / "cruft"
+    source_dir = Path(__file__).parent / "starter"
     dest_dir = Path("tailwind")
     if dest_dir.exists():
         click.secho(f"Target directory '{dest_dir}' exists, aborting.", fg="red")
         sys.exit(1)
 
     shutil.copytree(source_dir, dest_dir)
-    click.secho(f"Tailwind source and cruft installed in '{dest_dir}'.", fg="green")
+    click.secho(f"Tailwind starter config installed in '{dest_dir}'.", fg="green")
 
 
 @tailwind.command()
