@@ -9,7 +9,7 @@ from flask import Flask, Response, send_from_directory
 from .tags import make_tailwind_css_tag
 
 
-class Tailwind(object):
+class Tailwind:
     def __init__(self, app: Union[Flask, None] = None):
         self.app = app
 
