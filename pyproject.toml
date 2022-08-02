@@ -26,7 +26,7 @@ tailwind = "flask_tailwind.cli:tailwind"
 [tool.poetry.dependencies]
 python = ">=3.8,<4"
 
-Flask = "^2"
+Flask = "^2.2.0"
 
 
 [tool.poetry.dev-dependencies]
@@ -37,7 +37,7 @@ cruft = "*"
 toml = "*"
 
 # Debug
-devtools = "^0.8.0"
+devtools = "^0.9.0"
 
 # Testing
 pytest = "*"
@@ -53,7 +53,7 @@ flake8-super-call = "*"
 flake8-tidy-imports = "*"
 mccabe = "*"
 mypy = "*"
-pyanalyze = "^0.5"
+pyanalyze = "0.5.*"
 
 # Incompatible with recent version of Flake8
 # flake8-pytest = "*"
@@ -75,6 +75,8 @@ pyyaml = "*"
 restructuredtext_lint = "*"
 
 ## /standard cruft
+pyupgrade = "^2.37.3"
+poetryup = "^0.9.0"
  
 
 [tool.isort]
