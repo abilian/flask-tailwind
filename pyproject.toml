@@ -49,13 +49,15 @@ flake8 = "*"
 flake8-bugbear = "*"
 flake8-comprehensions = "*"
 flake8-mutable = "*"
-flake8-pytest = "*"
 flake8-super-call = "*"
 flake8-tidy-imports = "*"
-mastool = "*"
 mccabe = "*"
 mypy = "*"
 pyanalyze = "^0.5"
+
+# Incompatible with recent version of Flake8
+# flake8-pytest = "*"
+# mastool = "*"
 
 # Formatting
 isort = "*"
