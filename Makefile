@@ -45,6 +45,10 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
+
+#
+# Linting
+#
 lint/flake8: ## check style with flake8
 	flake8 src tests
 
@@ -73,23 +77,11 @@ vagrant-tests:
 #
 lint: lint-py lint-js lint-rst lint-doc
 
-lint-ci: lint
-
-lint-all: lint lint-mypy lint-bandit
-
 lint-py:
-	@echo "--> Linting Python files /w flake8"
+	@echo "--> Linting & typechecking Python files"
 	flake8 src tests
-	@echo ""
-
-lint-mypy:
-	@echo "--> Typechecking Python files w/ mypy"
+	python -m pyanalyze --config-file pyproject.toml src
 	mypy src tests
-	@echo ""
-
-lint-travis:
-	@echo "--> Linting .travis.yml files"
-	travis lint --no-interactive
 	@echo ""
 
 lint-rst:
