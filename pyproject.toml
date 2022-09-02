@@ -32,10 +32,6 @@ Flask = "^2.2.0"
 [tool.poetry.dev-dependencies]
 ## Standard cruft
 
-# Cruft (project templates management)
-cruft = "*"
-toml = "*"
-
 # Debug
 devtools = "^0.9.0"
 
@@ -76,7 +72,6 @@ restructuredtext_lint = "*"
 
 ## /standard cruft
 pyupgrade = "^2.37.3"
-poetryup = "^0.9.0"
  
 
 [tool.isort]
