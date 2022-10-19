@@ -1,5 +1,5 @@
 .PHONY: all develop test lint clean doc format
-.PHONY: clean clean-build clean-pyc clean-test coverage dist docs install lint lint/flake8
+.PHONY: clean clean-build clean-pyc clean-test coverage dist docs install lint
 
 # The package name
 PKG=flask_tailwind
@@ -45,18 +45,6 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
-
-#
-# Linting
-#
-lint/flake8: ## check style with flake8
-	flake8 src tests
-
-lint/black: ## check style with black
-	black --check src tests
-
-lint: lint/flake8 lint/black ## check style
-
 test-with-coverage:
 	@echo "--> Running Python tests"
 	pytest --cov $(PKG)
@@ -75,13 +63,14 @@ vagrant-tests:
 #
 # Various Checkers
 #
-lint: lint-py lint-js lint-rst lint-doc
+lint: lint-py  # lint-js lint-rst lint-doc
 
 lint-py:
 	@echo "--> Linting & typechecking Python files"
 	flake8 src tests
-	python -m pyanalyze --config-file pyproject.toml src
 	mypy src tests
+	deptry .
+	# python -m pyanalyze --config-file pyproject.toml src
 	@echo ""
 
 lint-rst:

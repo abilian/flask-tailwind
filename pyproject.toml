@@ -74,6 +74,10 @@ restructuredtext_lint = "*"
 pyupgrade = "^2.37.3"
  
 
+[tool.poetry.group.dev.dependencies]
+deptry = "^0.6.1"
+poetryup = "^0.12.3"
+
 [tool.isort]
 profile = "black"
 
@@ -102,3 +106,15 @@ value_always_true = true
 # missing_return_annotation = true
 # suggested_return_type = true
 
+
+[tool.deptry]
+ignore_obsolete = [
+]
+ignore_missing = [
+]
+ignore_transitive = [
+  "click",
+]
+exclude = [
+    '.tox', 'tests', 'sandbox', 'doc', 'scripts'
+]
