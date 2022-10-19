@@ -26,10 +26,10 @@ tailwind = "flask_tailwind.cli:tailwind"
 [tool.poetry.dependencies]
 python = ">=3.8,<4"
 
-Flask = "^2.2.0"
+Flask = "^2"
 
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 ## Standard cruft
 
 # Debug
@@ -71,12 +71,12 @@ pyyaml = "*"
 restructuredtext_lint = "*"
 
 ## /standard cruft
-pyupgrade = "^2.37.3"
+pyupgrade = "^3.1.0"
  
 
-[tool.poetry.group.dev.dependencies]
 deptry = "^0.6.1"
 poetryup = "^0.12.3"
+
 
 [tool.isort]
 profile = "black"
