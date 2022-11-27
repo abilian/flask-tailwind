@@ -2,7 +2,7 @@
 
 import os
 from pathlib import Path
-from typing import Union
+from typing import Optional
 
 from flask import Flask, Response, send_from_directory
 
@@ -10,7 +10,7 @@ from .tags import make_tailwind_css_tag
 
 
 class Tailwind:
-    def __init__(self, app: Union[Flask, None] = None):
+    def __init__(self, app: Optional[Flask] = None):
         self.app = app
 
         if app is not None:
