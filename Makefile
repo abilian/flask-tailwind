@@ -1,11 +1,11 @@
-.PHONY: all develop test lint clean doc format
+.PHONY: all develop ruff test lint clean doc format
 .PHONY: clean clean-build clean-pyc clean-test coverage dist docs install lint
 
 # The package name
 PKG=flask_tailwind
 
 
-all: test lint
+all: ruff test lint
 
 #
 # Setup
@@ -63,6 +63,9 @@ vagrant-tests:
 #
 # Various Checkers
 #
+ruff:
+	ruff src tests
+
 lint: lint-py  # lint-js lint-rst lint-doc
 
 lint-py:
