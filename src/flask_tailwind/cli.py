@@ -28,6 +28,9 @@ def init():
     shutil.copytree(source_dir, dest_dir)
     click.secho(f"Tailwind starter config installed in '{dest_dir}'.", fg="green")
 
+    click.secho(f"Installing npm dependencies in '{dest_dir}'.", fg="green")
+    npm_run("install")
+
 
 @tailwind.command()
 @with_appcontext
@@ -40,6 +43,7 @@ def install():
 @with_appcontext
 def build():
     """Build the CSS assets."""
+    install_if_needed()
     npm_run("run", "build")
 
 
@@ -47,6 +51,7 @@ def build():
 @with_appcontext
 def start():
     """Start watching CSS changes for dev."""
+    install_if_needed()
     npm_run("run", "start")
 
 
@@ -64,14 +69,23 @@ def update():
     npm_run("update")
 
 
-# @tailwind.command()
-# @with_appcontext
-# def npm(*args):
-#     """Call directly npm with given args."""
-#     npm_run(*args)
+@tailwind.command()
+@with_appcontext
+def npm(*args):
+    """Call directly npm with given args."""
+    npm_run(*args)
 
 
 def npm_run(*args):
     cwd = "tailwind"
+    click.secho(f"Running 'npm {' '.join(args)}' in '{cwd}'.", fg="green")
     npm = NPM(cwd=cwd)
     npm.run(*args)
+
+
+def install_if_needed():
+    if not Path("tailwind/node_modules").exists():
+        click.secho(
+            "No tailwind/node_modules directory found. Running 'npm install'.", fg="blue"
+        )
+        npm_run("install")
