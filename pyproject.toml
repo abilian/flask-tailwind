@@ -27,8 +27,7 @@ tailwind = "flask_tailwind.cli:tailwind"
 [tool.poetry.dependencies]
 python = ">=3.9,<4"
 
-Flask = ">=2"
-
+flask = ">=2"
 
 [tool.poetry.group.dev.dependencies]
 abilian-devtools = "*"
@@ -39,7 +38,6 @@ devtools = "*"
 # Doc
 restructuredtext_lint = "*"
 deptry = "^0.12.0"
-
 
 [tool.isort]
 profile = "black"
@@ -70,14 +68,5 @@ value_always_true = true
 # suggested_return_type = true
 
 
-[tool.deptry]
-ignore_obsolete = [
-]
-ignore_missing = [
-]
-ignore_transitive = [
-  "click",
-]
-exclude = [
-    '.tox', 'tests', 'sandbox', 'doc', 'scripts'
-]
+[tool.deptry.per_rule_ignores]
+DEP003 = ["click"]
