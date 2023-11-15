@@ -27,20 +27,18 @@ tailwind = "flask_tailwind.cli:tailwind"
 [tool.poetry.dependencies]
 python = ">=3.9,<4"
 
-Flask = "^2"
+Flask = ">=2"
 
 
 [tool.poetry.group.dev.dependencies]
 abilian-devtools = "*"
 
 # Debug
-devtools = "^0.10"
-
-# Needed for some reason
-pyyaml = "*"
+devtools = "*"
 
 # Doc
 restructuredtext_lint = "*"
+deptry = "^0.12.0"
 
 
 [tool.isort]

@@ -72,7 +72,7 @@ lint-py:
 	@echo "--> Linting & typechecking Python files"
 	flake8 src tests
 	mypy src tests
-	deptry .
+	deptry src
 	# python -m pyanalyze --config-file pyproject.toml src
 	@echo ""
 
