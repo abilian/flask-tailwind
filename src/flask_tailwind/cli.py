@@ -86,6 +86,7 @@ def npm_run(*args):
 def install_if_needed():
     if not Path("tailwind/node_modules").exists():
         click.secho(
-            "No tailwind/node_modules directory found. Running 'npm install'.", fg="blue"
+            "No tailwind/node_modules directory found. Running 'npm install'.",
+            fg="blue",
         )
         npm_run("install")

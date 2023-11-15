@@ -128,7 +128,7 @@ clean:
 		dist build pip-wheel-metadata junit-*.xml htmlcov coverage.xml
 
 tidy: clean
-	rm -rf .tox .nox .dox .travis-solo
+	rm -rf .tox .nox
 	rm -rf node_modules
 	rm -rf instance
 
